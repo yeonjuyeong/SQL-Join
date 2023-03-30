@@ -10,6 +10,13 @@ where
 #### 내부조인:exclamation:
 두 테이블을 연결할 때 가장 많이 사용하는  것이 내부 조인입니다. 그냥 조인이라고 부르면 내부 조인을 의미합니다.
 ![image](https://user-images.githubusercontent.com/123055714/228698886-a087030d-fa83-4c45-97d2-5b6314505731.png)
+##### 예제
+
+```java
+select E.LAST_NAME, D.DEPARTMENT_NAME from EMPLOYEES E,DEPARTMENTS D //조회할 것과 조회하는 곳
+where E.DEPARTMENT_ID = D.DEPARTMENT_ID //조건 EMPLOYEES DEPARTMENT_ID랑 DEPARTMENT DEPARTMENT_ID랑 같다.
+and E.SALARY <= 2500 and E.EMPLOYEE_ID <= 200; // SALARY가 2500보다크고 EMPLOYEE_ID가 200보다 작다.
+```
 
 #### 외부조인:exclamation:
 내부 조인은 두 테이블에 모두 데이터가 있어야만 결과가 나오지만, 외부 조인은 한쪽에만 데이터가 있어도 결과가 나옵니다.<br>
