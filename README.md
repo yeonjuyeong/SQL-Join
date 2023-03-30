@@ -11,7 +11,7 @@ where
 두 테이블을 연결할 때 가장 많이 사용하는  것이 내부 조인입니다. 그냥 조인이라고 부르면 내부 조인을 의미합니다.
 ![image](https://user-images.githubusercontent.com/123055714/228698886-a087030d-fa83-4c45-97d2-5b6314505731.png)
 ##### 예제
-
+급여가 2500 이하이고 사원번호가 200이하인 사원의 LAST_NAME, 부서명을 조회하시오.
 ```java
 select E.LAST_NAME, D.DEPARTMENT_NAME from EMPLOYEES E,DEPARTMENTS D //조회할 것과 조회하는 곳
 where E.DEPARTMENT_ID = D.DEPARTMENT_ID //조건 EMPLOYEES DEPARTMENT_ID랑 DEPARTMENT DEPARTMENT_ID랑 같다.
@@ -29,3 +29,10 @@ FULL OUTER JOIN: 왼쪽 또는 오른쪽 테이블의 모든 값이 출력되는
 #### 셀프조인 :exclamation:
 자체 조인은 자기 자신과 조인하므로 1개의 테이블을 사용합니다. 별도의 문법이 있는 것은 아니고 1개로 조인하면 자체 조인이 됩니다.
 ![image](https://user-images.githubusercontent.com/123055714/228699357-5882d373-7e2c-4871-b102-b9d55ba8122e.png)
+##### 예제
+자신의 매니저보다 먼저 고용된 사원들의 LAST_NAME 및 고용일을 조회한다.
+```java
+SELECT E.LAST_NAME, E.HIRE_DATE from EMPLOYEES E, EMPLOYEES M //조회할 것과 조회하는 곳
+where E.MANAGER_ID = M.EMPLOYEE_ID and E.HIRE_DATE < M.HIRE_DATE; //조건 EMPLOYEES E MANAGER_ID와 
+```
+
